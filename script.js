@@ -7,7 +7,7 @@ let currFolder;
 async function getSongs(folder) {
     console.log('getSongs is called')
     currFolder = folder;
-    let a = await fetch(`./${folder}/`)
+    let a = await fetch(`./songs/${folder}/`)
     let response = await a.text()
 
     let div = document.createElement('div')
@@ -112,7 +112,7 @@ async function main() {
 console.log('main function is called')
     // get the songs list of the songs
     await getSongs("songs/downloaded");
-    console('get songs await is called', getSongs)
+    console.log('get songs await is called', getSongs)
     playMusic(songs[0], true)
 
 
