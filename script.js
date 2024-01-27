@@ -106,7 +106,7 @@ async function displayAlbums(){
     
 }
 async function main() {
-
+console.log('main function is called')
     // get the songs list of the songs
     await getSongs("songs/downloaded");
     playMusic(songs[0], true)
