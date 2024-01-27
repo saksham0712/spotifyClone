@@ -1,13 +1,12 @@
-// hello
+
 
 let currentSong = new Audio();
 let songs;
 let currFolder;
 
 async function getSongs(folder) {
-    console.log('getSongs is called')
     currFolder = folder;
-    let a = await fetch(`./songs/${folder}/`)
+    let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
     let response = await a.text()
 
     let div = document.createElement('div')
@@ -59,8 +58,7 @@ const playMusic = (track, pause = false) => {
 }
 
 async function displayAlbums(){
-    console.log('display album is called')
-    let a = await fetch(`./songs/`)
+    let a = await fetch(`http://127.0.0.1:3000/songs/`)
     let response = await a.text()
 
     let div = document.createElement('div')
@@ -70,13 +68,12 @@ async function displayAlbums(){
     let array = Array.from(anchors)
         for (let index = 0; index < array.length; index++) {
             const e = array[index];
-        console.log('this is response', response)    
+            
         
         if(e.href.includes("/songs")){
             let folder = e.href.split("/").slice(-2)[0]
             // get the metadata of the folder
-            let a = await fetch(`./songs/${folder}/info.json`)
-            console.log('api fetched in display album', a)
+            let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
             let response = await a.json()
             cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}"  class="cards">
             <div class="play">
@@ -109,10 +106,9 @@ async function displayAlbums(){
     
 }
 async function main() {
-console.log('main function is called')
+
     // get the songs list of the songs
     await getSongs("songs/downloaded");
-    console.log('get songs await is called', getSongs)
     playMusic(songs[0], true)
 
 
