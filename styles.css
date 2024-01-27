@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --a:0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+
+.left {
+    width: 25vw;
+    padding: 10px;
+}
+
+.close {
+    display: none;
+}
+
+.right {
+    width: 75vw;
+    position: relative;
+}
+
+.home ul li {
+    display: flex;
+    width: 15px;
+    gap: 15px;
+    padding-top: 14px;
+    list-style: none;
+    font-weight: bold;
+
+}
+
+.heading {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    padding-top: 14px;
+    padding: 23px 14px;
+    list-style: none;
+    font-weight: bold;
+    align-items: center;
+    font-size: 13px;
+}
+
+.heading img {
+    width: 30px;
+}
+
+.library {
+    min-height: 75vh;
+    position: relative;
+}
+
+.footer {
+    display: flex;
+    font-size: 10px;
+    color: grey;
+    gap: 11px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px 0;
+}
+
+.footer a {
+    color: grey;
+}
+
+.right {
+    margin: 15px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2a2929;
+}
+
+.header>* {
+    padding: 18px;
+}
+
+.spotifyPlaylists {
+    padding: 14px;
+}
+
+.cardContainer {
+    margin: 26px;
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 12px;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.cards {
+    width: 160px;
+    /* height: 260px; */
+    padding: 10px;
+    position: relative;
+    background-color: #252525;
+    border-radius: 5px;
+    transition: all .9s;
+}
+
+.cards:hover{
+    background-color: rgb(97, 96, 96);
+    cursor: pointer;
+    --a:1;
+}
+
+.cards>* {
+    padding-top: 8px;
+}
+
+.cards img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.play {
+    width: 50px;
+    height: 35px;
+    background-color: #1ed760;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    position: absolute;
+    right: 14px;
+    top: 130px;
+    opacity: var(--a);
+    transition: all 1s ease-out;
+}
+
+.buttons>* {
+    margin: 0 12px;
+}
+
+.Signup-btn {
+    background-color: #2a2929;
+    color: rgb(184 184 178);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.Signup-btn:hover {
+    color: gray;
+    font-size: 17px;
+}
+
+.Login-btn {
+    background-color: #fff;
+    color: black;
+    border-radius: 21px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 94px;
+    cursor: pointer;
+}
+
+.Login-btn:hover {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(184 184 178);
+    /* padding: 10px 14px;          */
+    /* width: 94px; */
+
+}
+
+.player {
+    bottom: 30px;
+    /* background: #2a2929; */
+    position: fixed;
+    width: 68%;
+    min-height: 33px;
+    background-color: #2a2929;
+    padding: 12px;
+    border-radius: 19px;
+
+}
+
+.songbuttons {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+}
+
+.songList {
+    height: 434px;
+    overflow: scroll;
+}
+
+.songList ul {
+    padding: 0 12px;
+}
+
+.songList ul li {
+    list-style-type: decimal;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    /* padding: 12px 0; */
+    border: 1px solid white;
+    margin: 6px 0;
+    padding: 14px;
+    border-radius: 3px;
+    justify-content: space-between;
+}
+
+.songList .info {
+    font-size: 13px;
+    width: 333px;
+}
+
+.playnow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playnow span {
+    font-size: 10px;
+    width: 60px;
+}
+
+.seekbar {
+    height: 4px;
+    width: 97%;
+    background: white;
+    position: absolute;
+    bottom: 10px;
+    margin: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hamburgerCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+.hamburger {
+    display: none;
+    height: 30px;
+    width: 30px;
+}
+
+.range input,
+.volume {
+    /* display: none; */
+    cursor: pointer;
+}
+
+.circle {
+    width: 11px;
+    height: 11px;
+    border-radius: 13px;
+    background-color: white;
+    position: relative;
+    bottom: 3px;
+    left: 0%;
+    transition: left 0.5s;
+
+}
+
+.songbuttons img {
+    cursor: pointer;
+}
+
+.songinfo {
+    width: 150px;
+    font-size: 12px;
+}
+
+.songtime {
+    /* border: 1px solid white; */
+    width: 60px;
+    font-size: 12px;
+}
+
+.timeVol {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .timeVol:hover::after{
+    content: "sdakjskdfha";
+    transition: all 0.5s;
+} */
+
+.abovebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+@media (max-width: 700px) {
+    .left {
+        /* background-color: red; */
+        position: absolute;
+        left: -400px;
+        transition: all .3s;
+        z-index: 1;
+        width: 370px;
+        background: black;
+    }
+
+    .left .close {
+        position: absolute;
+        top: 30px;
+        left: 328px;
+        display: block;
+    }
+
+    .right {
+        width: 100vw;
+        margin: 0;
+    }
+
+    .player {
+        width: calc(100vw - 52px);
+        padding: 0 12px;
+
+    }
+
+    .seekbar {
+        width: calc(100vw - 57px);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .cards {
+        width: 80vw;
+        margin-top: 17px;
+    }
+
+    .cardContainer {
+        margin: 0;
+        justify-content: center;
+    }
+
+    .header>* {
+        padding: 7px;
+    }
+
+    .abovebar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .songinfo {
+        font-size: 18px;
+        width: 80vw;
+    }
+
+    .range,
+    .volume {
+        display: none;
+        cursor: pointer;
+    }
+
+    .play {
+        right: 18px;
+        top: 40vh;
+    }
+}
